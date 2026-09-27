@@ -1,0 +1,2 @@
+type SelectPillProps = { label: string; selected: boolean; onClick: () => void };
+export function SelectPill({ label, selected, onClick }: SelectPillProps) { return <button type="button" onClick={onClick} aria-pressed={selected} className={`pill focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral ${selected ? "pill-selected" : ""}`}>{label}</button>; }

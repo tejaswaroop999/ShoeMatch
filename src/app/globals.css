@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    color-scheme: light;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #eeece6;
+}
+
+body {
+    margin: 0;
+    background: #eeece6;
+    color: #20201d;
+    font-family: var(--font-sans), sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+::selection {
+    background: #d96e4f;
+    color: #fffaf3;
+}
+
+@layer components {
+    .app-shell {
+        @apply mx-auto min-h-screen max-w-[480px] bg-paper shadow-soft;
+    }
+
+    .page-padding {
+        @apply px-5;
+    }
+
+    .eyebrow {
+        @apply text-[10px] font-bold uppercase tracking-[0.22em] text-sage;
+    }
+
+    .pill {
+        @apply rounded-full border border-line bg-white px-3 py-2 text-xs font-medium transition-colors;
+    }
+
+    .pill-selected {
+        @apply border-ink bg-ink text-white;
+    }
+
+    .primary-button {
+        @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-5 text-sm font-bold text-white transition-transform active:scale-[.98];
+    }
+
+    .secondary-button {
+        @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-ink px-5 text-sm font-bold text-ink transition-colors hover:bg-white;
+    }
+
+    .field-error {
+        @apply mt-2 text-sm font-bold text-coral;
+    }
+}
