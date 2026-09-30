@@ -2,6 +2,24 @@
 
 ShoeMatch helps people choose shoes from their own closet using simple, explainable rule-based matching.
 
+## Demo
+
+[Open ShoeMatch](https://shoe-match-psi.vercel.app/)
+
+## Recommendation architecture
+
+```mermaid
+flowchart TD
+  A[Local shoe closet] --> C[Rule-based matcher]
+  B[Outfit metadata and occasion] --> C
+  C --> D[Ranked shoes and explanations]
+  D --> E[Local feedback]
+  E --> F[Bounded personalization]
+  F --> C
+```
+
+This diagram describes metadata-driven matching, not image recognition. See `src/lib/matcher.ts`, `personalization.ts`, and `storage.ts` for the implementation.
+
 ## Features
 
 - Local shoe closet with add, edit, delete, image compression, and filters
@@ -63,3 +81,4 @@ Photos, shoes, feedback, and history remain on the current device in the MVP. No
 - Verified real shopping recommendations
 - Affiliate links
 - Subscriptions and Pro limits
+
